@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  @@include('html/head.html',{
+    "title":"Beshimov's Website"
+  })
+  <body>
+    @@include('html/header.html',{})
+    <main>
+      <section class="hero">
+        <div class="hero__row container">
+          <div class="hero__body">
+            <h1>
+              Hi, I am Babadjan Beshimov
+              A Webdev
+              based in City.
+            </h1>
+            <div class="hero__subtitle">
+              I help businesses and companies reach
+              their goals by designing user-centric digital
+              products & interactive experiences.
+            </div>
+            <button class="hero__mail">
+              <img src="img/icon/Email.svg" alt="Email">
+              <a href="mailto:beshiimov2001@gmail.com">
+                My Email
+              </a>
+            </button>
+          </div>
+          <div class="hero__photo">
+            <img src="img/photo.jpg" alt="Фото">
+          </div>
+        </div>
+        <div class="hero__down container">
+          <button class="scrollDown scroll">
+            <img src="img/icon/Arrow-down.svg" alt="Down">
+            Featured Work
+          </button>
+        </div>
+      </section>
+      <h2>Featured Work</h2>
+      <section class="works">
+        <div class="works__item">
+          <img src="img/works-1.jpg" alt="Works">
+          <div class="works__text">The working process</div>
+        </div>
+        <div class="works__item">
+          <img src="img/works-2.jpg" alt="Works">
+          <div class="works__text">The working process</div>
+        </div>
+        <div class="works__item">
+          <img src="img/works-4.jpg" alt="Works">
+          <div class="works__text">The working process</div>
+        </div>
+      </section>
+      <h2>Personal Projects</h2>
+      <section class="personal">
+        <div class="works__item">
+          <img src="img/Rectangle 4-1.jpg" alt="Works">
+          <div class="works__text">The working process</div>
+        </div>
+        <div class="works__item">
+          <img src="img/Rectangle 4-2.jpg" alt="Works">
+          <div class="works__text">The working process</div>
+        </div>
+        <div class="works__item">
+          <img src="img/Rectangle 4.jpg" alt="Works">
+          <div class="works__text">The working process</div>
+        </div>
+      </section>
+    </main>
+    @@include('html/footer.html',{})
+    <script src="js/app.min.js"></script>
+  </body>
+</html>
