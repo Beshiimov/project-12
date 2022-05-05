@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.min.css?_v=20220503100845">
+  <link rel="stylesheet" href="css/style.min.css?_v=20220505092931">
   <link rel="shortcut icon" href="img/icon/logo.svg" type="image/x-icon">
   <title>Beshimov's Website</title>
 </head>
@@ -12,19 +12,20 @@
     <header class="header">
   <div class="header__row container">
     <div class="header__left">
-      </a>
       <a href="#" class="logo">
         Beshimov
       </a>
     </div>
     <div class="header__right">
-      <a href="index.html">Home</a>
+      <a href="index.html" class="active-nav">Home</a>
       <a href="work.html">Work</a>
       <a href="contact.html">Contact</a>
     </div>
   </div>
 
 </header>
+    <div id="cursor"></div>
+    <div id="aura"></div>
     <main>
       <section class="hero">
         <div class="hero__row container">
@@ -56,39 +57,48 @@
             </div>
           </div>
           <div class="hero__photo">
-            <picture><source srcset="img/photo.webp" type="image/webp"><img src="img/photo.jpg" alt="Фото"></picture>
+            <picture><source srcset="img/photo.webp" type="image/webp"><img src="img/photo.jpg" loading="lazy" alt="my portrait"></picture>
+          </div>
+        </div>
+        <div class="bg-lights">
+          <span class="bg-light"></span>
+          <span class="bg-light"></span>
+        </div>
+      </section>
+      <section class="works">
+        <h2>Featured Work</h2>
+        <div class="works__body">
+          <div class="works__item">
+            <picture><source srcset="img/works-1.webp" type="image/webp"><img src="img/works-1.jpg" loading="lazy" alt="Works"></picture>
+            <div class="works__text">The working process</div>
+          </div>
+          <div class="works__item">
+            <picture><source srcset="img/works-2.webp" type="image/webp"><img src="img/works-2.jpg" loading="lazy" alt="Works"></picture>
+            <div class="works__text">The working process</div>
+          </div>
+          <div class="works__item">
+            <picture><source srcset="img/works-4.webp" type="image/webp"><img src="img/works-4.jpg" loading="lazy" alt="Works"></picture>
+            <div class="works__text">The working process</div>
           </div>
         </div>
       </section>
-      <h2>Featured Work</h2>
-      <section class="works">
-        <div class="works__item">
-          <picture><source srcset="img/works-1.webp" type="image/webp"><img src="img/works-1.jpg" alt="Works"></picture>
-          <div class="works__text">The working process</div>
-        </div>
-        <div class="works__item">
-          <picture><source srcset="img/works-2.webp" type="image/webp"><img src="img/works-2.jpg" alt="Works"></picture>
-          <div class="works__text">The working process</div>
-        </div>
-        <div class="works__item">
-          <picture><source srcset="img/works-4.webp" type="image/webp"><img src="img/works-4.jpg" alt="Works"></picture>
-          <div class="works__text">The working process</div>
-        </div>
-      </section>
-      <h2>Personal Projects</h2>
       <section class="personal">
-        <div class="works__item">
-          <img src="img/Rectangle 4-1.jpg" alt="Works">
-          <div class="works__text">The working process</div>
+        <h2>Personal Projects</h2>
+        <div class="works__body">
+          <div class="works__item">
+            <img src="img/Rectangle 4-1.jpg" loading="lazy" alt="Works">
+            <div class="works__text">The working process</div>
+          </div>
+          <div class="works__item">
+            <img src="img/Rectangle 4-2.jpg" loading="lazy" alt="Works">
+            <div class="works__text">The working process</div>
+          </div>
+          <div class="works__item">
+            <img src="img/Rectangle 4.jpg" loading="lazy" alt="Works">
+            <div class="works__text">The working process</div>
+          </div>
         </div>
-        <div class="works__item">
-          <img src="img/Rectangle 4-2.jpg" alt="Works">
-          <div class="works__text">The working process</div>
-        </div>
-        <div class="works__item">
-          <img src="img/Rectangle 4.jpg" alt="Works">
-          <div class="works__text">The working process</div>
-        </div>
+
       </section>
     </main>
     <footer class="footer">
@@ -103,7 +113,6 @@
     </div>
   </div>
 </footer>
-    <script src="js/smoothscroll.js?_v=20220503100845"></script>
-    <script type="module" src="js/app.min.js?_v=20220503100845"></script>
+    <script type="module" src="js/app.min.js?_v=20220505092931"></script>
   </body>
 </html>
