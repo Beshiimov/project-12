@@ -4,37 +4,42 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.min.css?_v=20220505095917">
-  <link rel="shortcut icon" href="img/icon/logo.svg" type="image/x-icon">
+  <link rel="stylesheet" href="css/style.min.css">
+  <link rel="shortcut icon" href="img/icon/Logo.svg" type="image/x-icon">
   <title>Beshimov's Website</title>
 </head>
   <body>
     <header class="header">
   <div class="header__row container">
     <div class="header__left">
-      <a href="#" class="logo">
+      <a href="#" class="logo" id="changingColor">
         Beshimov
       </a>
     </div>
     <div class="header__right">
-      <a href="index.html" class="active-nav">Home</a>
-      <a href="work.html">Work</a>
-      <a href="contact.html">Contact</a>
+      <a href="index.html" id="changingColor" class="active-nav">Home</a>
+      <a href="work.html" id="changingColor">Work</a>
+      <a href="contact.html" id="changingColor">Contact</a>
     </div>
   </div>
 
 </header>
-    <div id="cursor"></div>
-    <div id="aura"></div>
+    <div id="cursor" class="hidden"></div>
+    <div id="aura" class="hidden"></div>
     <main>
       <section class="hero">
         <div class="hero__row container">
-          <div class="hero__body">
+          <div class="hero__top">
             <h1>
               Hi, I am Babadjan Beshimov
               A Webdev
               based in City.
             </h1>
+            <div class="hero__photo">
+              <img src="img/photo.jpg" loading="lazy" alt="my portrait">
+            </div>
+          </div>
+          <div class="hero__text">
             <div class="hero__subtitle">
               I help businesses and companies reach
               their goals by designing user-centric digital
@@ -50,14 +55,11 @@
               </a>
             </button>
             <div class="hero__down">
-              <button class="scrollDown scroll">
+              <a href="#works" class="scrollDown scroll">
                 <img src="img/icon/Arrow-down.svg" alt="Down">
                 Featured Work
-              </button>
+              </a>
             </div>
-          </div>
-          <div class="hero__photo">
-            <picture><source srcset="img/photo.webp" type="image/webp"><img src="img/photo.jpg" loading="lazy" alt="my portrait"></picture>
           </div>
         </div>
         <div class="bg-lights">
@@ -65,40 +67,84 @@
           <span class="bg-light"></span>
         </div>
       </section>
+      <section class="creative-text">
+        <div class="creative-text__item">
+          <p class="creative-p">
+            Be Creative - Ambition - Believe - Clarity - Challenge - Live - Drive - Goals - Honesty - Imagination - Kindness - Knowledge - Listen - Mission - Passion - Practice - Question - Self-Control - Skill - Smile
+          </p>
+        </div>
+        <div class="creative-text__item">
+          <p class="creative-p-reverse">
+            Think - Trust - Understand - Win - art - Create - Celebrate - Ambition - Believe - Luxury -  Calm - Motivation - Clarity - Control - Dream - Life - Moving - Success - Rise - Skill - Desire
+          </p>
+        </div>
+        <div class="creative-text__item">
+          <p class="creative-p">
+            Sunset Love - Try Again - Sunset Love - Try Again - Sunset Love - Try Again - Sunset Love - Try Again - Sunset Love - Try Again - Sunset Love - Try Again - Sunset Love - Try Again
+          </p>
+        </div>
+      </section>
+      <section class="about">
+        <div class="about-me container">
+          <div class="about-me__item">
+            <div class="about-me__text">
+              <h3>
+                I am from Turkmenistan, studying in Russia.
+                I don't use bootstrap or jquery for my pet-projects.
+                I may not have many favorite projects, but I'm still 21, and I believe that no one knew anything at the beginning of their journey.
+                I started my journey recently, and I love what I do 😊
+              </h3>
+            </div>
+            <div class="about-me__photo dream-and-moon">
+              <img src="img/about/about-me-3.jpg" class="parallax-photo" alt="photos-about-me">
+              <img src="img/about/about-me-3.1.png" class="moon" alt="photos-about-me">
+            </div>
+          </div>
+          <div class="about-me__item">
+            <div class="about-me__text">
+              <h3>
+                Each of us had a dream.
+                My dream was to become a programmer and drive a BMW😅.
+              </h3>
+            </div>
+            <div class="about-me__photo">
+              <img src="img/about/about-me-2.jpg" class="parallax-photo" alt="photos-about-me">
+            </div>
+          </div>
+          <div class="about-me__item">
+            <div class="about-me__text">
+              <h3>
+                Technologies I use:
+              </h3>
+              <ul>
+                <li>HTML</li>
+                <li>SCSS</li>
+                <li>JS</li>
+                <li>REACT</li>
+              </ul>
+            </div>
+            <div class="about-me__photo">
+              <img src="img/about/about-me-1.jpg" class="parallax-photo" alt="photos-about-me">
+            </div>
+          </div>
+        </div>
+      </section>
       <section class="works">
         <h2>Featured Work</h2>
         <div class="works__body">
           <div class="works__item">
-            <picture><source srcset="img/works-1.webp" type="image/webp"><img src="img/works-1.jpg" loading="lazy" alt="Works"></picture>
+            <img src="img/works-1.jpg" class="works__item-photo" loading="lazy" alt="Works">
             <div class="works__text">The working process</div>
           </div>
           <div class="works__item">
-            <picture><source srcset="img/works-2.webp" type="image/webp"><img src="img/works-2.jpg" loading="lazy" alt="Works"></picture>
+            <img src="img/works-2.jpg" class="works__item-photo" loading="lazy" alt="Works">
             <div class="works__text">The working process</div>
           </div>
           <div class="works__item">
-            <picture><source srcset="img/works-4.webp" type="image/webp"><img src="img/works-4.jpg" loading="lazy" alt="Works"></picture>
+            <img src="img/works-4.jpg" class="works__item-photo" loading="lazy" alt="Works">
             <div class="works__text">The working process</div>
           </div>
         </div>
-      </section>
-      <section class="personal">
-        <h2>Personal Projects</h2>
-        <div class="works__body">
-          <div class="works__item">
-            <img src="img/Rectangle 4-1.jpg" loading="lazy" alt="Works">
-            <div class="works__text">The working process</div>
-          </div>
-          <div class="works__item">
-            <img src="img/Rectangle 4-2.jpg" loading="lazy" alt="Works">
-            <div class="works__text">The working process</div>
-          </div>
-          <div class="works__item">
-            <img src="img/Rectangle 4.jpg" loading="lazy" alt="Works">
-            <div class="works__text">The working process</div>
-          </div>
-        </div>
-
       </section>
     </main>
     <footer class="footer">
@@ -113,6 +159,6 @@
     </div>
   </div>
 </footer>
-    <script type="module" src="js/app.min.js?_v=20220505095917"></script>
+    <script type="module" src="js/app.min.js"></script>
   </body>
 </html>
