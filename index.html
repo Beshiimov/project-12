@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.min.css?_v=20220512215000">
+  <link rel="stylesheet" href="css/style.min.css?_v=20220513094549">
   <link rel="shortcut icon" href="img/icon/Logo.svg" type="image/x-icon">
   <title>Beshimov's Website</title>
-  <script src="https://code.createjs.com/1.0.0/preloadjs.min.js?_v=20220512215000"></script>
+  <script src="https://code.createjs.com/1.0.0/preloadjs.min.js?_v=20220513094549"></script>
 </head>
   <body>
     <header class="header">
@@ -26,71 +26,72 @@
 
 </header>
     <div id="preloader">
+      <div id="progressPercent"></div>
       <div id="progress"></div>
     </div>
 
     <div id="cursor" class="hidden"></div>
     <div id="aura" class="hidden"></div>
-
-    <script>
-      const body = document.querySelector('body');
-      const progress = document.getElementById('progress');
-      const preloader = document.getElementById('preloader');
-
-      const queue = new createjs.LoadQueue(false);
-
-      queue.on("fileload", handleFileComplete);
-      queue.on("progress", event => {
-        let progress = Math.floor(event.progress * 100);
-        this.progress.style.width = progress + '%';
-
-        body.style.overflowY = 'hidden';
-      });
-
-      queue.on("complete", event => {
-        body.classList.add('fadeIn');
-        body.style.overflowY = null;
-        setTimeout(() => {
-          progress.classList.add('expand');
-          preloader.classList.add('expand');
-        },500)
-      })
-
-      queue.loadFile('img/photo.jpg');
-      queue.loadFile('css/style.min.css');
-      queue.loadFile('js/app.min.js');
-
-      function handleFileComplete(event) {
-        const item = event.item; // A reference to the item that was passed in to the LoadQueue
-        const type = item.type;
-
-        // Add any images to the page body.
-        // if (type == createjs.Types.IMAGE) {
-        //   gallery.appendChild(event.result)
-        // }
-      }
-    </script>
-
     <main>
+      <script>
+        const main = document.querySelector('main');
+        const progress = document.getElementById('progress');
+        const progressPercent = document.getElementById('progressPercent');
+        const preloader = document.getElementById('preloader');
+
+        const queue = new createjs.LoadQueue(false);
+
+        queue.on("fileload", handleFileComplete);
+        queue.on("progress", event => {
+          let progress = Math.floor(event.progress * 100);
+          this.progress.style.width = progress + '%';
+          this.progressPercent.innerHTML = progress + '%'
+          main.style.overflowY = 'hidden';
+        });
+
+        queue.on("complete", event => {
+          main.classList.add('fadeIn');
+          main.style.overflowY = null;
+          setTimeout(() => {
+            progress.classList.add('expand');
+            preloader.classList.add('expand');
+          },200)
+        })
+
+        queue.loadFile('img/photo.jpg');
+        queue.loadFile('css/style.min.css');
+        queue.loadFile('js/app.min.js');
+        queue.loadFile('img/about/about-me-3.jpg');
+
+        function handleFileComplete(event) {
+          const item = event.item; // A reference to the item that was passed in to the LoadQueue
+          const type = item.type;
+
+          // Add any images to the page body.
+          // if (type == createjs.Types.IMAGE) {
+          //   gallery.appendChild(event.result)
+          // }
+        }
+      </script>
       <section class="hero">
         <div class="hero__row container">
           <div class="hero__top">
-            <h1 class="_anim-items _anim-no-hide">
+            <h1>
               Hi, I am Babadjan Beshimov
               A Webdev
               based in City.
             </h1>
             <div class="hero__photo">
-              <picture><source srcset="img/photo.webp" type="image/webp"><img src="img/photo.jpg" loading="lazy" class="_anim-items _anim-no-hide" alt="my portrait"></picture>
+              <picture><source srcset="img/photo.webp" type="image/webp"><img src="img/photo.jpg" loading="lazy" alt="my portrait"></picture>
             </div>
           </div>
           <div class="hero__text">
-            <div class="hero__subtitle _anim-items _anim-no-hide">
+            <div class="hero__subtitle">
               I help businesses and companies reach
               their goals by designing user-centric digital
               products & interactive experiences.
             </div>
-            <button class="hero__mail _anim-items _anim-no-hide">
+            <button class="hero__mail">
               <svg width="24" height="18" viewBox="0 0 24 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M21.1429 1H2.85715C2.22597 1 1.71429 1.51167 1.71429 2.14286V15.8571C1.71429 16.4883 2.22597 17 2.85715 17H21.1429C21.774 17 22.2857 16.4883 22.2857 15.8571V2.14286C22.2857 1.51167 21.774 1 21.1429 1Z" stroke="white" stroke-width="2" stroke-linecap="round"/>
                 <path d="M1.71429 2.71436L12 9.00007L22.2857 2.71436" stroke="white" stroke-width="2" stroke-linecap="round"/>
@@ -99,7 +100,7 @@
                 My Email
               </a>
             </button>
-            <div class="hero__down _anim-items _anim-no-hide">
+            <div class="hero__down">
               <a href="#works" class="scrollDown scroll">
                 <img src="img/icon/Arrow-down.svg" alt="Down">
                 Featured Work
@@ -141,8 +142,8 @@
               </h3>
             </div>
             <div class="about-me__photo dream-and-moon">
-              <picture><source srcset="img/about/about-me-3.webp" type="image/webp"><img src="img/about/about-me-3.jpg" class="parallax-photo" alt="photos-about-me"></picture>
-              <picture><source srcset="img/about/about-me-3.1.webp" type="image/webp"><img src="img/about/about-me-3.1.png" class="moon" alt="photos-about-me"></picture>
+              <picture><source srcset="img/about/about-me-3.webp" type="image/webp"><img src="img/about/about-me-3.jpg" class="parallax-photo" loading="lazy" alt="photos-about-me"></picture>
+              <picture><source srcset="img/about/about-me-3.1.webp" type="image/webp"><img src="img/about/about-me-3.1.png" class="moon" loading="lazy" alt="photos-about-me"></picture>
             </div>
           </div>
           <div class="about-me__item">
@@ -153,7 +154,7 @@
               </h3>
             </div>
             <div class="about-me__photo">
-              <picture><source srcset="img/about/about-me-2.webp" type="image/webp"><img src="img/about/about-me-2.jpg" class="parallax-photo" alt="photos-about-me"></picture>
+              <picture><source srcset="img/about/about-me-2.webp" type="image/webp"><img src="img/about/about-me-2.jpg" class="parallax-photo" loading="lazy" alt="photos-about-me"></picture>
             </div>
           </div>
           <div class="about-me__item">
@@ -169,7 +170,7 @@
               </ul>
             </div>
             <div class="about-me__photo">
-              <picture><source srcset="img/about/about-me-1.webp" type="image/webp"><img src="img/about/about-me-1.jpg" class="parallax-photo" alt="photos-about-me"></picture>
+              <picture><source srcset="img/about/about-me-1.webp" type="image/webp"><img src="img/about/about-me-1.jpg" class="parallax-photo" loading="lazy" alt="photos-about-me"></picture>
             </div>
           </div>
         </div>
@@ -204,6 +205,6 @@
     </div>
   </div>
 </footer>
-    <script type="module" src="js/app.min.js?_v=20220512215000"></script>
+    <script type="module" src="js/app.min.js?_v=20220513094549"></script>
   </body>
 </html>
